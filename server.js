@@ -8,7 +8,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // api routes here
-
+app.use(routes);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sportsrentals");
 
 // Send every request to the React app
 // Define any API routes before this runs
