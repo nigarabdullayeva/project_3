@@ -5,22 +5,39 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Profile from './components/Profile'
-// import Search from "./components/Search";
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+
 
 
 function App() {
+
   return (
     <Router>
-    {/* <Search/> */}
-      <div className="container-sm">
-
-        {/* <Navbar /> */}
+      <div className="container">
+        <Navbar />
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/profile" component={Profile} />
-     
-        {/* <Footer /> */}
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <Footer />
        
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
           integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
