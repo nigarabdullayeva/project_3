@@ -9,7 +9,6 @@ function Home() {
       <br />
       <br />
       <br />
-
       <br />
       <div className="jumbotron text-center">
         <h1>Sport Adventures</h1>

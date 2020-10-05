@@ -14,7 +14,7 @@ function App() {
 
   return (
     <Router>
-      <div className="container-sm">
+      <div className="text-center container">
         <Navbar />
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
@@ -37,9 +37,7 @@ function App() {
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
+
         <Footer />
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
