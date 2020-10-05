@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === "production") {
 }
 // api routes here
 app.use(routes);
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sportsrentals");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sportadventures");
 
 // Send every request to the React app
 // Define any API routes before this runs
