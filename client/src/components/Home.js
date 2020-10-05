@@ -25,7 +25,7 @@ function Home() {
         <option>Surfboards</option>
       </select>
       <br />
-      <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      <button className="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
 
     </>
   )
