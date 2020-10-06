@@ -14,7 +14,7 @@ function App() {
 
   return (
     <Router>
-      <div className="text-center container">
+      <div className="container">
         <Navbar />
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
