@@ -21,7 +21,7 @@ function Login() {
       <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
     </div>
     
-    <button type="submit" className="btn btn-primary">Submit</button>
+    <button type="submit" className="btn btn-primary">Sign in</button>
   </form>
   )
 }
