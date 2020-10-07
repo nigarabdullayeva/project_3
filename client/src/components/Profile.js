@@ -1,13 +1,12 @@
 import React from 'react'
 
 
-function Profile() {
+const Profile = ({ handleLogout }) => {
   return (
-      <>
-      
-      User Profile Page
-           
-      </>
+    <>
+      <h1>User Profile Page</h1>
+      <button onClick={handleLogout}>Logout</button>
+    </>
   )
 }
 export default Profile
