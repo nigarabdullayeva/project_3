@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 // This file empties the Posts collection and inserts the books below
+ project_3/nigar
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sportadv");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
 
 const ItemSeed = [
   {
@@ -11,21 +12,29 @@ const ItemSeed = [
     description: "new item ",
     location: "Chicago",
     price: "20$",
-    photos: ""
+    photos: "",
+    username: "name",
+    userphone: "312 000 0000"
   },
   {
     title: "Item 2 ",
     description: "used item ",
     location: "New York",
     price: "50$",
-    photos: ""
+    photos: "",
+    username: "namee",
+    userphone: "312 000 0001"
+
   },
   {
     title: "Item 3 ",
     description: "new item ",
     location: "Seattle",
     price: "30$",
-    photos: ""
+    photos: "",
+    username: "namena",
+    userphone: "312 100 0000"
+
   },
 ];
 
