@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 // This file empties the Posts collection and inserts the books below
-
+ project_3/nigar
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sportadv");
+
 
 const ItemSeed = [
   {
@@ -23,6 +24,7 @@ const ItemSeed = [
     photos: "",
     username: "namee",
     userphone: "312 000 0001"
+
   },
   {
     title: "Item 3 ",
@@ -32,6 +34,7 @@ const ItemSeed = [
     photos: "",
     username: "namena",
     userphone: "312 100 0000"
+
   },
 ];
 
