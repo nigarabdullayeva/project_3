@@ -18,9 +18,8 @@ function Navbar() {
                         <NavLink to="/login" className={window.location.pathname === "/login" ? "nav-link activeClassName" : "nav-link"}>Login
                              </NavLink>
                     </li>
-
                     <li className="nav-item">
-                        <NavLink to="/signup" className={window.location.pathname === "/contact" ? "nav-link activeClassName" : "nav-link"}>Signup
+                        <NavLink to="/profile" className={window.location.pathname === "/profile" ? "nav-link activeClassName" : "nav-link"}>Profile
                              </NavLink>
                     </li>
                 </ul>
