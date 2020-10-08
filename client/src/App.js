@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import Home from './components/Home'
 import Login from './components/Login'
 import Profile from './components/Profile'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import fire from './fire'
+import PrivateRoute from "./components/PrivateRoute";
 
-function App() {
-  const [user, setUser] = useState('');
+function App({history}) {
+  const [user, setUser] = useState(null);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
-
   const clearInputs = () => {
     setEmail('');
     setPassword('');
@@ -26,7 +26,8 @@ function App() {
     setPasswordError('');
   }
 
-  const handleLogin = () => {
+  const handleLogin = (evt) => {
+    evt.preventDefault();
     clearErrors();
     fire
       .auth()
@@ -45,7 +46,8 @@ function App() {
         }
       })
   }
-  const handleSignup = () => {
+  const handleSignup = (evt) => {
+    evt.preventDefault();
     clearErrors();
     fire
       .auth()
@@ -64,29 +66,33 @@ function App() {
       })
   }
   const handleLogout = () => {
+    setUser(null)
     fire.auth().signOut();
+    history.push('/');
   }
-  const authListener = () => {
-    fire.auth().onAuthStateChanged(user => {
-      if (user) {
-        clearInputs();
-        setUser(user)
-      } else {
-        setUser('')
-      }
-    })
-  }
+  
 
   useEffect(() => {
+    const authListener = () => {
+      fire.auth().onAuthStateChanged(user => {
+        if (user !== null) {
+          clearInputs();
+          setUser(user)
+          history.push('/profile');
+        } else {
+          setUser(null)
+        }
+      })
+    }
     authListener();
   }, [])
 
   return (
-    <Router>
       <div className="container">
         <Navbar />
         <Route exact path="/" component={Home} />
-        {user ? (
+      <PrivateRoute isAuthed={user !== null} path="/profile" component={() => <Profile handleLogout={handleLogout} />} />
+        {/* {user ? (
           <Route exact path="/profile" component={Profile}>
             <Profile handleLogout={handleLogout} />
           </Route>
@@ -103,8 +109,18 @@ function App() {
               setHasAccount={setHasAccount}
               emailError={emailError}
               passwordError={passwordError} />
-          </Route>)}
-
+          </Route>)} */}
+          <Route path="/login" component={() => <Login
+              email={email}
+              setEmail={setEmail}
+              password={password}
+              setPassword={setPassword}
+              handleLogin={handleLogin}
+              handleSignup={handleSignup}
+              hasAccount={hasAccount}
+              setHasAccount={setHasAccount}
+              emailError={emailError}
+              passwordError={passwordError} />} />
         <br />
         <br />
         <br />
@@ -134,8 +150,7 @@ function App() {
           integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
           crossOrigin="anonymous"></script>
       </div>
-    </Router>
   );
 }
 
-export default App;
+export default withRouter(App);

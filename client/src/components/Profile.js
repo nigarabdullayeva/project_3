@@ -5,7 +5,7 @@ const Profile = ({ handleLogout }) => {
   return (
     <>
       <h1>User Profile Page</h1>
-      <button onClick={handleLogout}>Logout</button>
+      <button className="btn-primary" onClick={handleLogout}>Logout</button>
     </>
   )
 }
