@@ -1,15 +1,13 @@
-import React from 'react';
-// import '../containers/Profile.css'
-import User from '../components/User'
+import React from 'react'
 
-const Profile = ({ handleLogout }) => {
+
+function Profile() {
   return (
-    <>
-        <br/>
-      <button className="btn-primary" onClick={handleLogout}>Logout</button>
-      <h1>User Profile Page</h1>
-      <User/>
-    </>
+      <>
+      
+      User Profile Page testing commit 
+           
+      </>
   )
 }
-export default Profile;
+export default Profile
