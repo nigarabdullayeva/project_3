@@ -25,10 +25,8 @@ function App({history}) {
     setPasswordError('');
   }
 
-<<<<<<< HEAD
 
 function App() {
-=======
   const handleLogin = (evt) => {
     evt.preventDefault();
     clearErrors();
@@ -89,7 +87,6 @@ function App() {
     }
     authListener();
   }, [])
->>>>>>> 358ae89470d4dcb43bac0c167d85ffe0e4f57817
 
   return (
       <div className="container">
