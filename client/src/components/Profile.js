@@ -57,3 +57,12 @@ class Profile extends Component {
   
   
   export default Profile;
+const Profile = ({ handleLogout }) => {
+  return (
+    <>
+      <h1>User Profile Page</h1>
+      <button className="btn-primary" onClick={handleLogout}>Logout</button>
+    </>
+  )
+}
+export default Profile

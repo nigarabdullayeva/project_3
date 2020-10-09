@@ -1,45 +1,131 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import Home from './components/Home'
 import Login from './components/Login'
-import Signup from './components/Signup'
 import Profile from './components/Profile'
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import fire from './fire'
+import PrivateRoute from "./components/PrivateRoute";
 
+function App({history}) {
+  const [user, setUser] = useState(null);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [hasAccount, setHasAccount] = useState(false);
+  const clearInputs = () => {
+    setEmail('');
+    setPassword('');
+  }
 
+  const clearErrors = () => {
+    setEmailError('');
+    setPasswordError('');
+  }
 
+<<<<<<< HEAD
 
 function App() {
+=======
+  const handleLogin = (evt) => {
+    evt.preventDefault();
+    clearErrors();
+    fire
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .catch(err => {
+        switch (err.code) {
+          case "auth/invalid-email":
+          case "auth/user-disabled":
+          case "auth/user-not-found":
+            setEmailError(err.message);
+            break;
+          case "auth/wrong-password":
+            setPasswordError(err.message);
+            break;
+          default:
+        }
+      })
+  }
+  const handleSignup = (evt) => {
+    evt.preventDefault();
+    clearErrors();
+    fire
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .catch(err => {
+        switch (err.code) {
+          case "auth/email-already-in-use":
+          case "auth/invalid-email":
+            setEmailError(err.message);
+            break;
+          case "auth/weak-password":
+            setPasswordError(err.message);
+            break;
+          default:
+        }
+      })
+  }
+  const handleLogout = () => {
+    setUser(null)
+    fire.auth().signOut();
+    history.push('/');
+  }
+  
+
+  useEffect(() => {
+    const authListener = () => {
+      fire.auth().onAuthStateChanged(user => {
+        if (user !== null) {
+          clearInputs();
+          setUser(user)
+          history.push('/profile');
+        } else {
+          setUser(null)
+        }
+      })
+    }
+    authListener();
+  }, [])
+>>>>>>> 358ae89470d4dcb43bac0c167d85ffe0e4f57817
 
   return (
-    <Router>
       <div className="container">
         <Navbar />
         <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/profile" component={Profile} />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <Footer />
+      <PrivateRoute isAuthed={user !== null} path="/profile" component={() => <Profile handleLogout={handleLogout} />} />
+        {/* {user ? (
+          <Route exact path="/profile" component={Profile}>
+            <Profile handleLogout={handleLogout} />
+          </Route>
+        ) :
+          (<Route exact path="/login">
+            <Login
+              email={email}
+              setEmail={setEmail}
+              password={password}
+              setPassword={setPassword}
+              handleLogin={handleLogin}
+              handleSignup={handleSignup}
+              hasAccount={hasAccount}
+              setHasAccount={setHasAccount}
+              emailError={emailError}
+              passwordError={passwordError} />
+          </Route>)} */}
+          <Route path="/login" component={() => <Login
+              email={email}
+              setEmail={setEmail}
+              password={password}
+              setPassword={setPassword}
+              handleLogin={handleLogin}
+              handleSignup={handleSignup}
+              hasAccount={hasAccount}
+              setHasAccount={setHasAccount}
+              emailError={emailError}
+              passwordError={passwordError} />} />
+  
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
           integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -51,8 +137,7 @@ function App() {
           integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
           crossOrigin="anonymous"></script>
       </div>
-    </Router>
   );
 }
 
-export default App;
+export default withRouter(App);
