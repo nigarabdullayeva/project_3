@@ -3,7 +3,7 @@ const db = require("../models");
 
 // This file empties the Posts collection and inserts the books below
  project_3/nigar
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sportadv");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sportadventures");
 
 
 const ItemSeed = [
