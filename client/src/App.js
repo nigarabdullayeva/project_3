@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Route, withRouter } from 'react-router-dom'
-import Home from './components/Home'
-import Login from './components/Login'
-import Profile from './components/Profile'
-import Navbar from './components/Navbar'
-import fire from './fire'
-import PrivateRoute from "./components/PrivateRoute";
+import { Route, withRouter } from 'react-router-dom';
+import Home from './components/Home';
+import Login from './components/Login';
+import Profile from './components/Profile';
+import Navbar from './components/Navbar';
+import fire from './fire';
+import PrivateRoute from "./components/PrivateRoute"
 
 function App({history}) {
   const [user, setUser] = useState(null);
