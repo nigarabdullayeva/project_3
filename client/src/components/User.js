@@ -38,18 +38,20 @@ class User extends Component {
         </div>
         </div>
         </div>
-        
-        <div className="container">
-        <div className="column">
-        <aside className="history">History</aside>
         </div>
-        </div>
-        </div>
-        {/* <label htmlFor="input" className="image-upload">
-          <i className="material-icons">add_photo_alternate</i>
-          Choose your photo
-        </label> */}
-        </>
+         </>
+
+        // {/* <div className="container">
+        // <div className="column">
+        // <aside className="history">History</aside>
+        // </div>
+        // </div>
+        // </div> */}
+        // {/* <label htmlFor="input" className="image-upload">
+        //   <i className="material-icons">add_photo_alternate</i>
+        //   Choose your photo
+        // </label> */}
+       
       );
     }
   
