@@ -15,6 +15,7 @@ function App({history}) {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
+
   const clearInputs = () => {
     setEmail('');
     setPassword('');
@@ -25,9 +26,13 @@ function App({history}) {
     setPasswordError('');
   }
 
-  const handleLogin = (evt) => {
+  const handleLogin = (evt, email, password) => {
+   
     evt.preventDefault();
     clearErrors();
+
+  
+
     fire
       .auth()
       .signInWithEmailAndPassword(email, password)
@@ -45,9 +50,11 @@ function App({history}) {
         }
       })
   }
-  const handleSignup = (evt) => {
+  const handleSignup = (evt, email, password) => {
     evt.preventDefault();
     clearErrors();
+
+    console.log('handle signup is happening!!!', email, password)
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -86,6 +93,7 @@ function App({history}) {
     authListener();
   }, [])
 
+  // console.log('this is emailand password in APP.js', email, password)
   return (
       <div className="container">
         <Navbar />
