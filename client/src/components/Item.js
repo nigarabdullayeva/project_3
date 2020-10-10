@@ -5,7 +5,7 @@ function Item() {
   return (
       <>
       
-      items list here 
+      items from db list here 
            
       </>
   )
