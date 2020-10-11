@@ -17,7 +17,7 @@ export default {
   saveItem: function(itemData) {
     return axios.post("/api/items", itemData);
   },
-  saveItemTest: function() {
-    return "test"
-  }
+  //saveItemTest: function() {
+    //return "test"
+  //}
 };
