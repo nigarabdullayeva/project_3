@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../containers/Profile.css'
+import FileUpload from '../components/FileUpload'
 
 class User extends Component {
   state={
@@ -39,6 +40,7 @@ class User extends Component {
         </div>
         </div>
         </div>
+        <FileUpload/>
          </>
 
         // {/* <div className="container">
