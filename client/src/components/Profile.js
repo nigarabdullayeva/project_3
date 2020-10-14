@@ -2,8 +2,8 @@ import React from 'react';
 import User from '../components/User'
 import History from '../components/History'
 import Item from '../components/Item'
-// import '../containers/Profile.css'  
-
+import '../containers/Profile.css'  
+// import FileUpload from '../components/FileUpload'
 const Profile = ({ handleLogout }) => {
   return (
     <>
@@ -12,6 +12,7 @@ const Profile = ({ handleLogout }) => {
       <br/>
       <User/>
       <History/>
+      {/* <FileUpload /> */}
       <Item/>
     </>
   )
