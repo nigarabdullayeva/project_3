@@ -1,8 +1,11 @@
+// import { storage } from 'firebase';
 // import SkeletonImage from 'antd/lib/skeleton/Image';
 // import e from 'express';
 import React, { useState } from 'react';
 import { render } from 'react-dom';
-// import { storage } from '../FirebaseUpload'
+// import { storage } from '../fire'
+import { storage } from '../FirebaseUpload/index'
+
 
 const FileUpload = () => {
 
@@ -14,7 +17,26 @@ const FileUpload = () => {
         }
     };
 
-    const handleUpload = () => {};
+
+    const handleUpload = () => {
+        const uploadTask = storage.ref(`images/${image.name}`).put(image);
+        uploadTask.on(
+            "state_changed",
+            snapshot => {},
+            error => {
+                // console.log(error);
+            },
+            () => {
+                storage
+                .ref("images")
+                .child(image.name)
+                .getDownloadURL()
+                .then(url => {
+                    console.log(url);
+                })
+            }
+        )
+    };
 
     console.log('image:', image)
 
