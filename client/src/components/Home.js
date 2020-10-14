@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Card from "../components/Card"
 
 function Home() {
   return (
@@ -25,6 +25,9 @@ function Home() {
       </select>
       <br />
       <button className="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+
+      <br/>
+      <Card />
 
     </>
   )

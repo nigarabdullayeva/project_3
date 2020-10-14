@@ -15,9 +15,8 @@ export default {
   },
   // Saves a item to the database
   saveItem: function(itemData) {
+    console.log("Saving Item",itemData);
+    // return itemData;
     return axios.post("/api/items", itemData);
-  },
-  //saveItemTest: function() {
-    //return "test"
-  //}
+  }
 };
