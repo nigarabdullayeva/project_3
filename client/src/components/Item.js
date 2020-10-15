@@ -8,7 +8,7 @@ function Item() {
     location: "",
     price: "",
     photoURL: "",
-    userName: "",
+    category: "",
     phone: ""
   })
 
@@ -74,13 +74,16 @@ function Item() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Username</label>
-            <input
-              type="text"
-              className="form-control"
-              name="userName"
-              onChange={handleSetItem}
-            />
+            <label htmlFor="exampleInputPassword1">Category</label>
+            <select className="form-control ">
+            <option>Select category</option>
+            <option>Skis</option>
+            <option>Snowboards</option>
+            <option>Bicycles</option>
+            <option>Roller blades</option>
+            <option>Golf clubs</option>
+            <option>Surfboards</option>
+      </select>
           </div>
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Phone</label>

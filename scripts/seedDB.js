@@ -12,7 +12,7 @@ const ItemSeed = [
     location: "Chicago",
     price: "20$",
     photos: "",
-    userName: "name",
+    category: "name",
     phone: "312 000 0000"
   },
   {
@@ -21,7 +21,7 @@ const ItemSeed = [
     location: "New York",
     price: "50$",
     photos: "",
-    userName: "namee",
+    category: "namee",
     phone: "312 000 0001"
 
   },
@@ -31,7 +31,7 @@ const ItemSeed = [
     location: "Seattle",
     price: "30$",
     photos: "",
-    userName: "namena",
+    category: "namena",
     phone: "312 100 0000"
 
   },
