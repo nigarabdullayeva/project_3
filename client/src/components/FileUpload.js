@@ -10,6 +10,7 @@ import { storage } from '../FirebaseUpload/index'
 const FileUpload = () => {
 
     const [image, setImage] = useState(null);
+    const [url, setUrl] = useState("");
 
     const handleChange = e => {
     if (e.target.files[0]) {
@@ -33,6 +34,8 @@ const FileUpload = () => {
                 .getDownloadURL()
                 .then(url => {
                     console.log(url);
+                    setUrl(url);
+                    
                 })
             }
         )
@@ -42,9 +45,13 @@ const FileUpload = () => {
 
     return (
         <div>
-            Hi all!
+            <img src={url} alt="firebaseimage" height="200" width="200"/>
+            <br/>
+            
             <input type='file' onChange={handleChange} />
+            <br/>
             <button onClick={handleUpload}>Upload</button>
+            
         </div>
     )
 }
