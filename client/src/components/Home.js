@@ -40,10 +40,26 @@ function Home() {
         <option>Surfboards</option>
       </select>
       <br />
+      <div className="text-center">
       <button onClick={onSubmitSearch} className="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      </div>
+      <br/>
 
-      {results.length ? results.map((result) => <div key={result._id}>
-        {result.title},{result.category},{result.location}</div>) : null}
+      {results.length ? results.map((result) => <div className="card float-right w-50" key={result._id}>
+
+          <div className="card-body">
+            <h5 className="card-header">{result.title}</h5>
+            <p className="card-text">{result.category}</p>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">Description: {result.description}</li>
+            <li className="list-group-item">Location: {result.location}</li>
+            <li className="list-group-item">Price: {result.price}</li>
+            <li className="list-group-item">Phone number: {result.phone}</li>
+          </ul>
+            <a href="/profile" className="card-link">Card link</a>
+          </div>
+       
+        </div>) : null}
     </>
   )
 }
