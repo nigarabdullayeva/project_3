@@ -17,17 +17,10 @@ class History extends Component {
     render() {
       
       return (
-       
         <>
-         
-        
-        <div className="container">
         <div className="column">
         <aside className="history">History</aside>
-        </div>
-        </div>
-        
-        
+        </div>       
         </>
       );
     }

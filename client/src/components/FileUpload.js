@@ -3,8 +3,8 @@
 // import e from 'express';
 import React, { useState } from 'react';
 import { render } from 'react-dom';
-// import { storage } from '../fire'
-import { storage } from '../FirebaseUpload/index'
+import { storage } from '../fire'
+// import { storage } from '../FirebaseUpload/index'
 
 
 const FileUpload = () => {
@@ -16,8 +16,7 @@ const FileUpload = () => {
         setImage(e.target.files[0]);
         }
     };
-
-
+    
     const handleUpload = () => {
         const uploadTask = storage.ref(`images/${image.name}`).put(image);
         uploadTask.on(
@@ -41,8 +40,9 @@ const FileUpload = () => {
     console.log('image:', image)
 
     return (
-        <div>
-            Hi all!
+        <div className="upload">
+            <br/>
+            Upload photos
             <input type='file' onChange={handleChange} />
             <button onClick={handleUpload}>Upload</button>
         </div>

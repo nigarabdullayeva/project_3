@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/analytics';
+import 'firebase/storage';
 
   var firebaseConfig = {
     apiKey: "AIzaSyCfBfwXk2p9aUvWSpplDuVAJzU1pRzdnqE",
@@ -13,6 +14,7 @@ import 'firebase/analytics';
     measurementId: "G-9RD90QL64V"
   };
   const fire = firebase.initializeApp(firebaseConfig);
+  const storage = fire.storage();
   firebase.analytics();
 
-  export default fire;
+  export {storage, fire as default};
