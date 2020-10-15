@@ -1,23 +1,25 @@
-import React, {useState, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 
 function Home() {
   const input = useRef(null);
-  const [results, setResults] = useState([]); // return [[], val => setValue(val)]
+  const [results, setResults] = useState([]);
 
   const onSubmitSearch = async (evt) => {
     evt.preventDefault();
-    console.log(input.current.value);
-    if(input.current && input.current.value){
-    const data = await axios.get('/api/search',{params: {
-      search: input.current.value,
-      category: 'type' 
-    }}).then(({data}) => data);
-    console.log(data);
-    setResults(data)
-  }
+    // console.log(input.current.value);
+    if (input.current && input.current.value) {
+      const data = await axios.get('/api/search', {
+        params: {
+          search: input.current.value,
+          // category: input.current.value
+        }
+      }).then(({ data }) => data);
+      console.log(data);
+      setResults(data)
+    }
   }
   return (
     <>
@@ -32,34 +34,34 @@ function Home() {
       <input ref={input} className="form-control" type="text" placeholder="Search for gear in this city" aria-label="Search" /><br />
       <select className="form-control ">
         <option>Select category</option>
-        <option>Skis</option>
-        <option>Snowboards</option>
-        <option>Bicycles</option>
-        <option>Roller blades</option>
-        <option>Golf clubs</option>
-        <option>Surfboards</option>
+        <option value="skis">Skis</option>
+        <option value="snowboards">Snowboards</option>
+        <option value="bicycles">Bicycles</option>
+        <option value="roller blades">Roller blades</option>
+        <option value="golf clubs">Golf clubs</option>
+        <option value="surfboards">Surfboards</option>
       </select>
       <br />
       <div className="text-center">
-      <button onClick={onSubmitSearch} className="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+        <button onClick={onSubmitSearch} className="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
       </div>
-      <br/>
+      <br />
 
       {results.length ? results.map((result) => <div className="card float-right w-50" key={result._id}>
 
-          <div className="card-body">
-            <h5 className="card-header">{result.title}</h5>
-            <p className="card-text">{result.category}</p>
+        <div className="card-body">
+          <h5 className="card-header text-center">{result.title}</h5>
           <ul className="list-group list-group-flush">
+            <li className="list-group-item">Category: {result.category}</li>
             <li className="list-group-item">Description: {result.description}</li>
             <li className="list-group-item">Location: {result.location}</li>
             <li className="list-group-item">Price: {result.price}</li>
             <li className="list-group-item">Phone number: {result.phone}</li>
           </ul>
-            <a href="/profile" className="card-link">Card link</a>
-          </div>
-       
-        </div>) : null}
+          <a href="/profile" className="card-link">Rent it</a>
+        </div>
+
+      </div>) : null}
     </>
   )
 }

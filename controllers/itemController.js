@@ -10,7 +10,7 @@ module.exports = {
   },
   
   search: function(req, res) {
-    console.log(req.query.search)
+    // console.log(req.query.search)
     db.Item.find().or([
       {location: { $regex: req.query.search, $options: "i" }}, 
       {category: { $regex: req.query.search, $options: "i" }}
