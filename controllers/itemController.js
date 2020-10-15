@@ -8,6 +8,18 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  
+  search: function(req, res) {
+    console.log(req.query.search)
+    db.Item.find().or([
+      {location: { $regex: req.query.search, $options: "i" }}, 
+      {category: { $regex: req.query.search, $options: "i" }}
+    ])
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
+
   findById: function(req, res) {
     db.Item.findById(req.params.id)
       .then(dbModel => res.json(dbModel))
