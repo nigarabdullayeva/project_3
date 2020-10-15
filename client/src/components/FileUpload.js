@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { render } from 'react-dom';
 // import { storage } from '../fire'
 import { storage } from '../FirebaseUpload/index'
-
+import '../containers/Profile.css'
 
 const FileUpload = () => {
 
@@ -45,7 +45,7 @@ const FileUpload = () => {
 
     return (
         <div>
-            <img src={url} alt="firebaseimage" height="200" width="200"/>
+            <img src={url || "https://lippianfamilydentistry.net/wp-content/uploads/2015/11/user-default.png"} alt="firebaseimage" height="200" width="200"/>
             <br/>
             
             <input type='file' onChange={handleChange} />
