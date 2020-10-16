@@ -5,16 +5,24 @@ import axios from 'axios';
 
 function Home() {
   const input = useRef(null);
+ 
   const [results, setResults] = useState([]);
+  const [cat, setCat] = useState("");
+
+  const changeCat = async (evt) => {
+    evt.preventDefault();
+    console.log(cat);
+    await setCat(evt.target.value)
+  }
 
   const onSubmitSearch = async (evt) => {
     evt.preventDefault();
-    // console.log(input.current.value);
+    console.log(input.current.value,cat);
     if (input.current && input.current.value) {
       const data = await axios.get('/api/search', {
         params: {
           search: input.current.value,
-          // category: input.current.value
+          category: cat
         }
       }).then(({ data }) => data);
       console.log(data);
@@ -32,7 +40,7 @@ function Home() {
         <h1>Sport Adventures</h1>
         <h3>Find the right gear to fuel your next adventure</h3></div>
       <input ref={input} className="form-control" type="text" placeholder="Search for gear in this city" aria-label="Search" /><br />
-      <select className="form-control ">
+      <select onChange={changeCat} className="form-control ">
         <option>Select category</option>
         <option value="skis">Skis</option>
         <option value="snowboards">Snowboards</option>
