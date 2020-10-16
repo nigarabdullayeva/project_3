@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 
-function Home() {
+function Home({user}) {
   const input = useRef(null);
  
   const [results, setResults] = useState([]);
@@ -28,6 +28,10 @@ function Home() {
       console.log(data);
       setResults(data)
     }
+  }
+  const rentIt = (itemId)=>{
+    console.log(user.uid)
+    console.log(itemId)
   }
   return (
     <>
@@ -66,7 +70,7 @@ function Home() {
             <li className="list-group-item">Price: {result.price}</li>
             <li className="list-group-item">Phone number: {result.phone}</li>
           </ul>
-          <a href="/profile" className="card-link">Rent it</a>
+          <button onClick={()=> rentIt(result._id)} className="card-link">Rent it</button>
         </div>
 
       </div>) : null}

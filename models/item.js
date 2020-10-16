@@ -8,7 +8,8 @@ const ItemSchema = new Schema({
   location: { type: String, required: true },
   price: {type: Number, required: true},
   photoURL:{type: String, required: true},
-  phone:{type: String, required: true}
+  phone:{type: String, required: true},
+  rentedBy:{type: String}
 });
 
 const Item = mongoose.model("Item", ItemSchema);

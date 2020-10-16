@@ -4,7 +4,8 @@ import History from '../components/History'
 import Item from '../components/Item'
 import '../containers/Profile.css'  
 // import FileUpload from '../components/FileUpload'
-const Profile = ({ handleLogout }) => {
+const Profile = ({ handleLogout, user }) => {
+  console.log(user)
   return (
     <>
       <br/>
