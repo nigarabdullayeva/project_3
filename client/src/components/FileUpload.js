@@ -3,6 +3,9 @@
 // import e from 'express';
 import React, { useState } from 'react';
 import { render } from 'react-dom';
+// import { storage } from '../fire'
+// import { storage } from '../FirebaseUpload/index'
+import '../containers/Profile.css'
 import { storage } from '../fire'
 // import { storage } from '../FirebaseUpload/index'
 
@@ -10,6 +13,7 @@ import { storage } from '../fire'
 const FileUpload = () => {
 
     const [image, setImage] = useState(null);
+    const [url, setUrl] = useState("");
 
     const handleChange = e => {
     if (e.target.files[0]) {
@@ -32,6 +36,8 @@ const FileUpload = () => {
                 .getDownloadURL()
                 .then(url => {
                     console.log(url);
+                    setUrl(url);
+                    
                 })
             }
         )
@@ -40,11 +46,17 @@ const FileUpload = () => {
     console.log('image:', image)
 
     return (
-        <div className="upload">
+        <div>
+            <img src={url || "https://lippianfamilydentistry.net/wp-content/uploads/2015/11/user-default.png"} alt="firebaseimage" height="200" width="200"/>
             <br/>
-            Upload photos
+            
+        {/* <div className="upload">
+            <br/>
+            Upload photos */}
             <input type='file' onChange={handleChange} />
+            <br/>
             <button onClick={handleUpload}>Upload</button>
+            
         </div>
     )
 }

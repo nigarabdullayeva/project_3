@@ -25,23 +25,36 @@ class User extends Component {
         <h4>Hello, Username</h4>
         <br />
         <div className="row">
-          <div className="column">
-            <div>
-              <img src={profileImg} alt="profile" id="img" className="img" width="150" height="150" />
-              <br />
-              <input type="file" name="image-upload" id="input" accept="images/*" onChange={this.imageHandler} />
-              <li>Username</li>
-              <li>Email</li>
-            </div>
-          </div>
+          {/* <div className="column"> */}
+        <div className="profile">
+          
+          <FileUpload/>
+      
+       </div>
         </div>
-        <FileUpload />
-        <br/>
-      </>
-    );
+       
+        
+        {/* </div> */}
+       
+         </>
+
+        // {/* <div className="container">
+        // <div className="column">
+        // <aside className="history">History</aside>
+        // </div>
+        // </div>
+        // </div> */}
+        // {/* <label htmlFor="input" className="image-upload">
+        //   <i className="material-icons">add_photo_alternate</i>
+        //   Choose your photo
+        // </label> */}
+       
+      );
+    }
+  
   }
 
-}
+// }
 
 
 export default User;

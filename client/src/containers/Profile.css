@@ -7,18 +7,26 @@
 background-color: darkgrey;
 border-radius: 10px;
 padding: 20px;
-height: 270px;
-width: 300px;
-text-align: center;
+height: 300px;
+width: 250px;
+/* text-align: center; */
+
 
 }
 .history {
 background-color: darkgrey;
 border-radius: 10px;
 padding: 20px;
-height: 350px;
-width: 300px;
+height: 400px;
+width: 400px;
 text-align: center;
 float: right;
 }
 
+form {
+    background-color: cadetblue;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    
+}
