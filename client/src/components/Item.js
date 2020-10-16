@@ -3,20 +3,20 @@ import API from "../utils/API";
 import '../containers/Profile.css'
 
 function Item({user}) {
-  console.log(user)
+  // console.log(user)
   const [item, setItem] = useState({
+    category:"",
     title: "",
     description: "",
     location: "",
     price: "",
     photoURL: "",
-    userName: "",
     phone: "",
     email:""
   })
 
   const handleSetItem = (e) => {
-    console.log('we r typing!!', e.target.name)
+    // console.log('we r typing!!', e.target.name)
     setItem({
       ...item,
       [e.target.name]: e.target.value

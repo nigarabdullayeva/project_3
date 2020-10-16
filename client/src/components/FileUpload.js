@@ -28,16 +28,11 @@ const FileUpload = () => {
                     .child(image.name)
                     .getDownloadURL()
                     .then(url => {
-                        console.log(url);
                         setUrl(url);
-
                     })
             }
         )
     };
-
-    console.log('image:', image)
-
     return (
         <div>
             <img src={url || "https://lippianfamilydentistry.net/wp-content/uploads/2015/11/user-default.png"} alt="firebaseimage" height="200" width="200" />
