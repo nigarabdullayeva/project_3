@@ -17,8 +17,16 @@ width: 250px;
 background-color: darkgrey;
 border-radius: 10px;
 padding: 20px;
-height: 350px;
-width: 300px;
+height: 400px;
+width: 400px;
 text-align: center;
 float: right;
+}
+
+form {
+    background-color: cadetblue;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    
 }

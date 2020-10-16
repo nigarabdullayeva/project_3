@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import API from "../utils/API";
-
+import '../containers/Profile.css'
 function Item() {
   const [item, setItem] = useState({
     title: "",
@@ -94,6 +94,7 @@ function Item() {
           <button onClick={handleSaveItem} type="submit" className="btn btn-primary">Submit</button>
         </div>
       </form>
+      <br/>
     </>
   )
 

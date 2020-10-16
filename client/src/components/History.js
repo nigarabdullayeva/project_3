@@ -21,11 +21,11 @@ class History extends Component {
         <>
          
         
-        <div className="container">
-        <div className="column">
-        <aside className="history">History</aside>
-        </div>
-        </div>
+        {/* <div className="container">  */}
+         <div className="column">
+        <div className="history">History</div>
+        </div> 
+        {/* </div> */}
         
         
         </>

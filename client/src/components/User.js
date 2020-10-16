@@ -27,20 +27,21 @@ class User extends Component {
 
        <div className="container">
         <div className="row">
-          <div className="column">
+          {/* <div className="column"> */}
         <div className="profile">
           
           <FileUpload/>
           {/* <img src={profileImg} alt="profile" id="img" className="img" width="150" height="150"/> */}
         
-        <br/>
+        {/* <br/> */}
         
         {/* <input type="file" name="image-upload" id="input" accept="images/*" onChange={this.imageHandler}/> */}
-      <li>Username</li>
-      <li>Email</li>
+      {/* <li></li>
+      <li></li> */}
+       </div>
         </div>
-        </div>
-        </div>
+        {/* </div> */}
+        
         </div>
        
          </>
