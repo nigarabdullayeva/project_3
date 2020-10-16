@@ -18,9 +18,15 @@ class History extends Component {
       
       return (
         <>
-        <div className="column">
-        <aside className="history">History</aside>
-        </div>       
+         
+        
+        {/* <div className="container">  */}
+         <div className="column">
+        <div className="history">History</div>
+        </div> 
+        {/* </div> */}
+        
+        
         </>
       );
     }
