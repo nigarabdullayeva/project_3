@@ -69,6 +69,7 @@ function Home({user}) {
             <li className="list-group-item">Location: {result.location}</li>
             <li className="list-group-item">Price: {result.price}</li>
             <li className="list-group-item">Phone number: {result.phone}</li>
+            <li className="list-group-item">Email: {result.email}</li>
           </ul>
           <button onClick={()=> rentIt(result._id)} className="card-link">Rent it</button>
         </div>

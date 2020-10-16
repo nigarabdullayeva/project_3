@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import API from "../utils/API";
 import '../containers/Profile.css'
-function Item() {
+
+function Item({user}) {
+  console.log(user)
   const [item, setItem] = useState({
     title: "",
     description: "",
     location: "",
     price: "",
     photoURL: "",
-    category: "",
-    phone: ""
+    userName: "",
+    phone: "",
+    email:""
   })
 
   const handleSetItem = (e) => {
@@ -94,6 +97,17 @@ function Item() {
               className="form-control"
               name="phone"
               onChange={handleSetItem}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="exampleInputPassword1">Email</label>
+            <input 
+            type="text"
+            className="form-control"
+            name="email"
+            value={user.email} 
+            readOnly
+            onFocus={handleSetItem}
             />
           </div>
           <button onClick={handleSaveItem} type="submit" className="btn btn-primary">Submit</button>

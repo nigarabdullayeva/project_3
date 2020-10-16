@@ -18,7 +18,6 @@ class User extends Component {
     return (
       <>
         <br />
-        <h4>Hello, Username</h4>
         <br />
         <div className="row">
           <div className="profile">
