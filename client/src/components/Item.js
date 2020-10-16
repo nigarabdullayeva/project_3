@@ -8,7 +8,7 @@ function Item() {
     location: "",
     price: "",
     photoURL: "",
-    userName: "",
+    category: "",
     phone: ""
   })
 
