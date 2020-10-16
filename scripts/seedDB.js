@@ -18,7 +18,7 @@ const ItemSeed = [
   {
     category: "Skis",
     title: "Nordica ",
-    description: "Nordica Skis ",
+    description: "mint condition Nordica Skis ",
     location: "Denver",
     price: "20",
     photos: "",
@@ -62,7 +62,15 @@ const ItemSeed = [
     price: "180",
     photos: "",
     phone: "312 100 0003"
-
+  },
+  {
+    category: "Surfboards",
+    title: "Just a surfboard",
+    description: "used ",
+    location: "Chicago",
+    price: "15",
+    photos: "",
+    phone: "312 100 0033"
   },
 ];
 

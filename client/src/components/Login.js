@@ -38,7 +38,6 @@ const handleSubmitSignup = (e) => {
       <div className="form-group">
         <label htmlFor="exampleInputEmail1">Email address</label>
         <input
-          //autoFocus
           type="email"
           className="form-control"
           id="exampleInputEmail1"
@@ -46,7 +45,6 @@ const handleSubmitSignup = (e) => {
           placeholder="Enter email"
           required
           name="email"
-         // value={email}
           onChange = {handleTyping}
     
           />
@@ -56,14 +54,12 @@ const handleSubmitSignup = (e) => {
       <div className="form-group">
         <label htmlFor="exampleInputPassword1">Password</label>
         <input
-          // autoFocus
           name="password"
           type="password"
           className="form-control"
           id="exampleInputPassword1"
           placeholder="Password"
           required 
-          //value={password}
           onChange={handleTyping}
         />
       </div>
