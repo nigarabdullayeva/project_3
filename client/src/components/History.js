@@ -17,7 +17,6 @@ class History extends Component {
     render() {
       
       return (
-       
         <>
          
         
