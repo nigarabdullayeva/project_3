@@ -13,7 +13,6 @@ const Profile = ({ handleLogout, user }) => {
       <br/>
       <User/>
       <History/>
-      {/* <FileUpload /> */}
       <Item/>
     </>
   )

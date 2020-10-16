@@ -23,13 +23,13 @@ module.exports = {
     //     .then(dbModel => res.json(dbModel))
     //     .catch(err => res.status(422).json(err))
     // } else {
-      db.Item.find().and([
-        { location: { $regex: req.query.search, $options: "i" } },
-        { category: { $regex: req.query.category, $options: "i" } }
-      ])
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    
+    db.Item.find().and([
+      { location: { $regex: req.query.search, $options: "i" } },
+      { category: { $regex: req.query.category, $options: "i" } }
+    ])
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+
   },
   findById: function (req, res) {
     db.Item.findById(req.params.id)
