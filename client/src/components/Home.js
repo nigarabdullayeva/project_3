@@ -18,7 +18,7 @@ function Home({user}) {
   const onSubmitSearch = async (evt) => {
     evt.preventDefault();
     console.log(input.current.value,cat);
-    if (input.current && input.current.value) {
+    if (input.current.value!=="" || cat!=="") {
       const data = await axios.get('/api/search', {
         params: {
           search: input.current.value,
@@ -45,7 +45,7 @@ function Home({user}) {
         <h3>Find the right gear to fuel your next adventure</h3></div>
       <input ref={input} className="form-control" type="text" placeholder="Search for gear in this city" aria-label="Search" /><br />
       <select onChange={changeCat} className="form-control ">
-        <option>Select category</option>
+        <option value="">Select category</option>
         <option value="skis">Skis</option>
         <option value="snowboards">Snowboards</option>
         <option value="bicycles">Bicycles</option>
