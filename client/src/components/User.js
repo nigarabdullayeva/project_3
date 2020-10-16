@@ -4,9 +4,7 @@ import FileUpload from '../components/FileUpload'
 
 
 class User extends Component {
-  state = {
-    profileImg: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
-  }
+  state = {}
   imageHandler = (e) => {
     const reader = new FileReader();
     reader.onload = () => {
@@ -17,44 +15,21 @@ class User extends Component {
     reader.readAsDataURL(e.target.files[0])
   }
   render() {
-    const { profileImg } = this.state
     return (
-
       <>
         <br />
         <h4>Hello, Username</h4>
         <br />
         <div className="row">
-          {/* <div className="column"> */}
-        <div className="profile">
-          
-          <FileUpload/>
-      
-       </div>
+          <div className="profile">
+            <FileUpload />
+          </div>
         </div>
-       
-        
-        {/* </div> */}
-       
-         </>
-
-        // {/* <div className="container">
-        // <div className="column">
-        // <aside className="history">History</aside>
-        // </div>
-        // </div>
-        // </div> */}
-        // {/* <label htmlFor="input" className="image-upload">
-        //   <i className="material-icons">add_photo_alternate</i>
-        //   Choose your photo
-        // </label> */}
-       
-      );
-    }
-  
+      </>
+    );
   }
+}
 
-// }
 
 
 export default User;
