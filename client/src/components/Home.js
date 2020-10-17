@@ -1,9 +1,12 @@
 import React, { useState, useRef } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+// import { Route,Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 function Home({user}) {
+  const history=useHistory();
   const input = useRef(null);
  
   const [results, setResults] = useState([]);
@@ -24,14 +27,21 @@ function Home({user}) {
           search: input.current.value,
           category: cat
         }
-      }).then(({ data }) => data);
+      }).then(({ data }) => data)
+      .catch((err)=>{console.log(err)})
       console.log(data);
       setResults(data)
     }
   }
   const rentIt = (itemId)=>{
-    console.log(user.uid)
-    console.log(itemId)
+    if (user && user.uid) {
+      axios.put('/api/items/'+itemId,{rentedBy:user.uid})
+      .then(({ data }) => data)
+      .catch((err)=>{console.log(err)})
+    }else{
+    console.log(user);
+    history.push("/login")
+    }
   }
   return (
     <>
@@ -59,7 +69,7 @@ function Home({user}) {
       </div>
       <br />
 
-      {results.length ? results.map((result) => <div className="card float-right w-50" key={result._id}>
+      {results.length ? results.map((result) => <div className="slide-in-bottom card float-right w-50" key={result._id}>
 
         <div className="card-body">
           <h5 className="card-header text-center">{result.title}</h5>
