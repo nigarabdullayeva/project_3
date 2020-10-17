@@ -92,7 +92,7 @@ function App({ history }) {
       })
     }
     authListener();
-  },[])
+  },[history])
 
   // console.log('this is email and password in APP.js', email, password)
   return (
