@@ -47,7 +47,7 @@ function Item({user}) {
       <div className="card-header text-light bg-dark text-center">
         List your item
   </div>
-  <ItemUpload/>
+  <ItemUpload func={(parameter)=>setItem({...item, photoURL:parameter})}/>
       <form className="inputItem">
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Category</label>

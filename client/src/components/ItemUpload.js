@@ -5,7 +5,7 @@ import { storage } from '../fire'
 // import { storage } from '../FirebaseUpload/index'
 
 
-const ItemUpload = () => {
+const ItemUpload = (props) => {
 
     const [image, setImage] = useState(null);
     const [url, setUrl] = useState("");
@@ -27,8 +27,9 @@ const ItemUpload = () => {
                     .ref("images")
                     .child(image.name)
                     .getDownloadURL()
-                    .then(url => {
-                        setUrl(url);
+                    .then(url2 => {
+                        setUrl(url2);
+                        props.func(url2)
                     })
             }
         )
