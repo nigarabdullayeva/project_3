@@ -13,16 +13,18 @@ const ItemSeed = [
     location: "Denver",
     price: "20",
     photos: "",
-    phone: "312 000 0000"
+    phone: "312 000 0000",
+    email:""
   },
   {
     category: "Skis",
     title: "Nordica ",
-    description: "Nordica Skis ",
+    description: "mint condition Nordica Skis ",
     location: "Denver",
     price: "20",
     photos: "",
-    phone: "312 000 0000"
+    phone: "312 000 0000",
+    email:""
   },
   {
     category: "Snowboards",
@@ -31,7 +33,8 @@ const ItemSeed = [
     location: "Denver ",
     price: "50",
     photos: "",
-    phone: "312 000 0001"
+    phone: "312 000 0001",
+    email:""
 
   },
   {
@@ -41,7 +44,8 @@ const ItemSeed = [
     location: "Chicago",
     price: "130",
     photos: "",
-    phone: "312 100 0000"
+    phone: "312 100 0000",
+    email:""
 
   },
   {
@@ -51,7 +55,8 @@ const ItemSeed = [
     location: "Chicago",
     price: "150",
     photos: "",
-    phone: "312 100 0000"
+    phone: "312 100 0000",
+    email:""
 
   },
   {
@@ -61,8 +66,18 @@ const ItemSeed = [
     location: "Chicago",
     price: "180",
     photos: "",
-    phone: "312 100 0003"
-
+    phone: "312 100 0003",
+    email:""
+  },
+  {
+    category: "Surfboards",
+    title: "Just a surfboard",
+    description: "used ",
+    location: "Chicago",
+    price: "15",
+    photos: "",
+    phone: "312 100 0033",
+    email:""
   },
 ];
 

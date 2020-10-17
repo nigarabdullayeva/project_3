@@ -19,8 +19,11 @@ if (process.env.NODE_ENV === "production") {
 // api routes here
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sportadventures"),
-{ useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true };
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sportadventures",
+{ useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false });
 
 // Send every request to the React app
 // Define any API routes before this runs

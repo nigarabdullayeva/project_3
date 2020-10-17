@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, withRouter } from 'react-router-dom';
+import Item from './components/Item';
 import Home from './components/Home';
 import Login from './components/Login';
 import Profile from './components/Profile';
@@ -8,7 +9,7 @@ import Navbar from './components/Navbar';
 import fire from './fire';
 import PrivateRoute from "./components/PrivateRoute"
 
-function App({history}) {
+function App({ history }) {
   const [user, setUser] = useState(null);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -27,11 +28,11 @@ function App({history}) {
   }
 
   const handleLogin = (evt, email, password) => {
-   
+
     evt.preventDefault();
     clearErrors();
 
-  
+
 
     fire
       .auth()
@@ -76,7 +77,7 @@ function App({history}) {
     fire.auth().signOut();
     history.push('/');
   }
-  
+
 
   useEffect(() => {
     const authListener = () => {
@@ -93,53 +94,42 @@ function App({history}) {
     authListener();
   }, [])
 
-  // console.log('this is emailand password in APP.js', email, password)
+  // console.log('this is email and password in APP.js', email, password)
   return (
-      <div className="container">
-        <Navbar />
-        <Route exact path="/" component={Home} />
-      <PrivateRoute isAuthed={user !== null} path="/profile" component={() => <Profile handleLogout={handleLogout} />} />
-        {/* {user ? (
-          <Route exact path="/profile" component={Profile}>
-            <Profile handleLogout={handleLogout} />
-          </Route>
-        ) :
-          (<Route exact path="/login">
-            <Login
-              email={email}
-              setEmail={setEmail}
-              password={password}
-              setPassword={setPassword}
-              handleLogin={handleLogin}
-              handleSignup={handleSignup}
-              hasAccount={hasAccount}
-              setHasAccount={setHasAccount}
-              emailError={emailError}
-              passwordError={passwordError} />
-          </Route>)} */}
-          <Route path="/login" component={() => <Login
-              email={email}
-              setEmail={setEmail}
-              password={password}
-              setPassword={setPassword}
-              handleLogin={handleLogin}
-              handleSignup={handleSignup}
-              hasAccount={hasAccount}
-              setHasAccount={setHasAccount}
-              emailError={emailError}
-              passwordError={passwordError} />} />
+    <div className="container">
+      <Navbar />
+      <Route exact path="/" component={()=> <Home user={user}/>} />
+      
+      <PrivateRoute isAuthed={user !== null} path="/profile" 
+      component={() => <Profile user={user} handleLogout={handleLogout}/>}
+      />
+      <PrivateRoute isAuthed={user !== null} path="/profile" 
+      component={()=> <Item user={user}/>}
+      />
   
+      <Route path="/login" component={() => <Login
+        email={email}
+        setEmail={setEmail}
+        password={password}
+        setPassword={setPassword}
+        handleLogin={handleLogin}
+        handleSignup={handleSignup}
+        hasAccount={hasAccount}
+        setHasAccount={setHasAccount}
+        emailError={emailError}
+        passwordError={passwordError} />} />
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-          crossOrigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-          crossOrigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-          crossOrigin="anonymous"></script>
-      </div>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossOrigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossOrigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossOrigin="anonymous"></script>
+    </div>
   );
 }
 
