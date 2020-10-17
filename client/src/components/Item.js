@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import API from "../utils/API";
 import '../containers/Profile.css'
+import ItemUpload from '../components/ItemUpload'
+
 
 function Item({user}) {
   // console.log(user)
@@ -28,11 +30,24 @@ function Item({user}) {
     API.saveItem(item);
   };
 
+  // state = {}
+  // imageHandler = (e) => {
+  //   const reader = new FileReader();
+  //   reader.onload = () => {
+  //     if (reader.readyState === 2) {
+  //       this.setState({ profileImg: reader.result })
+  //     }
+  //   }
+  //   reader.readAsDataURL(e.target.files[0])
+  // }
+
+  
   return (
     <div className="card bg-light">
       <div className="card-header text-light bg-dark text-center">
         List your item
   </div>
+  <ItemUpload/>
       <form className="inputItem">
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Category</label>
@@ -82,13 +97,17 @@ function Item({user}) {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Photo</label>
-            <input
+            {/* <label htmlFor="exampleInputPassword1">Photo</label> */}
+            {/* <input
               type="text"
               className="form-control"
-              name="photoURL"
+              name="image URL"
               onChange={handleSetItem}
-            />
+              
+            /> */}
+             
+       
+            
           </div>
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Phone</label>
