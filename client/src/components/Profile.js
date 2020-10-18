@@ -38,14 +38,12 @@ const Profile = ({ handleLogout, user }) => {
             <li className="list-group-item">Email: {result.email}</li>
             <li className="list-group-item">RentedBy: {result.rentedBy}</li>
           </ul>
-
-
+          {console.log(result._id)}
+          
           <button
-            onClick={() => {
-              axios.put('/api/items/myitems/all',
-              {
-                params:{rentedBy: null }
-              })
+            onClick={(id) => {
+              id=result._id;
+              axios.put('/api/items/'+id,{rentedBy: null })
                 .then(({ data }) => data)
                 .catch((err) => { console.log(err) })
             }

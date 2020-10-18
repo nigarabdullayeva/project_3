@@ -13,7 +13,6 @@ router
 router
   .route("/myitems/all")
   .get(itemController.findByUser)
-  .put(itemController.update)
 
 // Matches with "/api/items/:id"
 router
