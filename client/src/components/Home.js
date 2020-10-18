@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-// import { Route,Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
 
@@ -82,7 +81,7 @@ function Home({user}) {
             <li className="list-group-item">Email: {result.email}</li>
           </ul>
           <button onClick={()=> {
-            window.location.reload()
+            history.go(0);
             rentIt(result._id)}} className="card-link">Rent it</button>
         </div>
 
