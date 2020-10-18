@@ -9,9 +9,11 @@ router
   .get(itemController.findAll)
   .post(itemController.create);
 
+// Matches with "/api/items/myitems/all"
 router
   .route("/myitems/all")
   .get(itemController.findByUser)
+  .put(itemController.update)
 
 // Matches with "/api/items/:id"
 router

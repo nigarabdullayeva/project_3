@@ -35,7 +35,7 @@ function Home({user}) {
   }
   const rentIt = (itemId)=>{
     if (user && user.uid) {
-      axios.put('/api/items/'+itemId,{rentedBy:user.uid})
+      axios.put('/api/items/'+itemId,{rentedBy:user.email})
       .then(({ data }) => data)
       .catch((err)=>{console.log(err)})
     }else{
