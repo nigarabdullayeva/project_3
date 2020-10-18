@@ -43,6 +43,7 @@ const Profile = ({ handleLogout, user }) => {
           {(result.rentedBy != null) ?
             <button
               onClick={(id) => {
+                window.location.reload()
                 id = result._id;
                 axios.put('/api/items/' + id, { rentedBy: null })
                   .then(({ data }) => data)

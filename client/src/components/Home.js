@@ -81,7 +81,9 @@ function Home({user}) {
             <li className="list-group-item">Phone number: {result.phone}</li>
             <li className="list-group-item">Email: {result.email}</li>
           </ul>
-          <button onClick={()=> rentIt(result._id)} className="card-link">Rent it</button>
+          <button onClick={()=> {
+            window.location.reload()
+            rentIt(result._id)}} className="card-link">Rent it</button>
         </div>
 
       </div>) : null}
