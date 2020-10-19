@@ -77,8 +77,7 @@ function App({ history }) {
     fire.auth().signOut();
     history.push('/');
   }
-
-
+  
   useEffect(() => {
     const authListener = () => {
       fire.auth().onAuthStateChanged(user => {
@@ -94,14 +93,13 @@ function App({ history }) {
     authListener();
   },[history])
 
-  // console.log('this is email and password in APP.js', email, password)
   return (
     <div className="container">
       <Navbar />
       <Route exact path="/" component={()=> <Home user={user}/>} />
       
       <PrivateRoute isAuthed={user !== null} path="/profile" 
-      component={() => <Profile user={user} handleLogout={handleLogout}/>}
+      component={()=><Profile user={user} handleLogout={handleLogout}/>}
       />
       <PrivateRoute isAuthed={user !== null} path="/profile" 
       component={()=> <Item user={user}/>}

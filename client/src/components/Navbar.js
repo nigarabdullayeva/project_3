@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 function Navbar() {
   return (
    <>
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark w-100">
                 <ul className="ml-auto navbar-nav">
 
                     <li className="nav-item">
