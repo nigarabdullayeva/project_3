@@ -17,7 +17,7 @@ React application that allows sport and adventure enthusiasts to share gear amon
 #### [Usage information](https://github.com/nigarabdullayeva/project_3#usage-information-1)
 #### [License](https://github.com/nigarabdullayeva/project_3#license-1)
 #### [Contributing](https://github.com/nigarabdullayeva/project_3#contributing-1)
-#### [Tests](https://github.com/nigarabdullayeva/project_3#tests-1)
+#### [Technologies](https://github.com/nigarabdullayeva/project_3#technologies-1)
 #### [Questions](https://github.com/nigarabdullayeva/project_3#questions-)
 
 
@@ -33,8 +33,19 @@ MIT
 ## Contributing
 Pull requests are welcome
 
-## Tests
-N/A
+## Technologies
+React - for components,state,routing
+Node.js - for JS runtime environment
+Bootstrap - for responsive style
+MongoDB,Mongoose - database for storing listed items information
+Firebase - for user authentication and encryption
+Firebase storage - for storing images
+JS/ES6+ - for program logic
+HTML - layout
+CSS - for custom style
+axios - for API calls
+
+
 
 ## Questions ?
 ### https://github.com/cd-prog
