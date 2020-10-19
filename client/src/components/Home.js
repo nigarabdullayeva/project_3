@@ -81,7 +81,7 @@ function Home({user}) {
             <li className="list-group-item">Email: {result.email}</li>
           </ul>
           <button onClick={()=> {
-            history.go(0);
+            history.push("/profile")
             rentIt(result._id)}} className="card-link">Rent it</button>
         </div>
 
