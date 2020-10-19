@@ -9,7 +9,19 @@ body {
 .jumbotron {
 	background: transparent;
 }
-
+.gear{
+	font-size: 55px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: rgb(151, 219, 251);
+}
+.gearCard{
+	height:440px;
+	width:33.3%;
+}
+.itemCard{
+	margin-left: auto;
+    margin-right: auto;
+}
 h1 {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	color: red;
@@ -22,18 +34,25 @@ h2 {
 	color:rgb(255, 255, 255);
 	font-weight:20px;
 	font-size: 35px;
-	text-shadow:3px 3px #ff0000; ;
+	text-shadow:3px 3px #ff0000; 
 }
+h3 {
+	color:white;
+	font-size: 25px;
+	text-shadow:3px 3px #000000;
+}
+p {
+	color:rgb(0, 0, 0);
+	font-weight: bold;
+	font-size: x-large;
+	font-weight:20px;
 
+}
 form {
 	width: 50%;
 }
 button, span {
 	cursor:pointer;
-}
-h5 {
-	color:rgb(3, 3, 3);
-	font-weight: bold;
 }
 
 .card-header {
@@ -46,9 +65,6 @@ h5 {
 .container{
 	min-height: 100vh;
 	position: relative;
-}
-.card {
-	width: 50%;
 }
 .text-pop-up-top {
 	-webkit-animation: text-pop-up-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

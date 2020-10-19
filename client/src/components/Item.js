@@ -27,11 +27,11 @@ function Item({ user }) {
   };
 
   return (
-    <div className="card bg-light">
-      <div className="card-header text-light bg-dark text-center">
-        List your item
-    </div>
-      <form className="inputItem">
+    <div className="card bg-light w-75 itemCard">
+      <div className="card-header text-center text-light bg-dark">
+        <h4>List your item</h4>
+      </div>
+      <form className="inputItem w-50">
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Category</label>
           <select onChange={handleSetItem} className="form-control " name="category" type="text">

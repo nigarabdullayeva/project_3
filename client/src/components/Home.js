@@ -66,7 +66,7 @@ function Home({user}) {
       </div>
       <br />
 
-      {results.length ? results.map((result) => <div className="slide-in-bottom card float-right w-50 mainCard" key={result._id}>
+      {results.length ? results.map((result) => <div className="slide-in-bottom card float-left w-50 mainCard" key={result._id}>
 
         <div className="card-body">
           <h5 className="card-header text-center">{result.title}</h5>

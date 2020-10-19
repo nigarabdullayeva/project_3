@@ -22,13 +22,16 @@ const Profile = ({ handleLogout, user }) => {
   return (
     <>
       <br />
-      <h3>You are currently signed in as : {user.email}</h3>
-      <button className="btn-primary" onClick={handleLogout}>Logout</button>
+      <h3 className="text-center">You are currently signed in as : {user.email}</h3>
+      <button className="btn-danger float-right" onClick={handleLogout}>Logout</button>
       <br />
       <User />
-
-      {results.length ? results.map((result) => <div className="slide-in-bottom card float-right w-50" key={result._id}>
-        <div className="card-body">
+      <br />
+    <div>
+      <div className="gear text-center">YOUR GEAR</div>
+      <br />
+      {results.length ? results.map((result) => <div className="slide-in-bottom card float-left gearCard" key={result._id}>
+        <div className="card-body ">
           <h5 className="card-header text-center">{result.title}</h5>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">Category: {result.category}</li>
@@ -50,13 +53,14 @@ const Profile = ({ handleLogout, user }) => {
                   .catch((err) => { console.log(err) })
               }
               }
-              className="card-link btn btn-outline-primary">
+              className="card-link btn btn-outline-primary float-right">
               Make item available
          </button> : null
           }
         </div>
       </div>) : null}
-
+      </div>
+      <br/>
     </>
   )
 }
