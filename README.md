@@ -43,6 +43,7 @@ Firebase storage - for storing images\
 JS/ES6+ - for program logic\
 HTML - layout\
 CSS - for custom style\
+Animista.net - for CSS animations
 axios - for API calls
 
 

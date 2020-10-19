@@ -47,13 +47,11 @@ function Home({user}) {
       <br />
       <br />
       <br />
-      <br />
-      <br />
       <div className="jumbotron text-center">
-        <h1>Sport Adventures</h1>
-        <h3>Find the right gear to fuel your next adventure</h3></div>
-      <input ref={input} className="form-control" type="text" placeholder="Search for gear in this city" aria-label="Search" /><br />
-      <select onChange={changeCat} className="form-control ">
+        <h1 className="text-pop-up-top">Sport Adventures</h1>
+        <h2 className="slide-in-left text-shadow-pop-bl">Find the right gear to fuel your next adventure</h2></div>
+      <input ref={input} className="form-control form-control-lg " type="text" placeholder="Find gear in this city" aria-label="Search" /><br />
+      <select onChange={changeCat} className="form-control form-control-lg ">
         <option value="">Select category</option>
         <option value="skis">Skis</option>
         <option value="snowboards">Snowboards</option>
