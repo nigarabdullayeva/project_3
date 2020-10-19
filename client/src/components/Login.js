@@ -21,7 +21,10 @@ const handleSubmitSignup = (e) => {
   handleSignup(e, login.email, login.password)
 }
   return (
-    <form>
+    <form className="loginForm float-right">
+      <br />
+      <br />
+      <br />
       <br />
       <br />
       <br />
