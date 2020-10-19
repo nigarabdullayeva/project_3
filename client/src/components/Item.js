@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import API from "../utils/API";
 import '../containers/Profile.css'
+// import { useHistory } from 'react-router-dom';
 
 function Item({user}) {
+  // const history=useHistory();
   // console.log(user)
   const [item, setItem] = useState({
     category:"",

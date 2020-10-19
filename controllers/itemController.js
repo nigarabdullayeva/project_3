@@ -1,8 +1,14 @@
-
 const db = require("../models");
 
 
 module.exports = {
+
+  findByUser: function(req,res){
+    db.Item.find({email:req.query.email})
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+  },
+
   findAll: function (req, res) {
     db.Item.find(req.query)
       .then(dbModel => res.json(dbModel))
