@@ -11,8 +11,9 @@ body {
 }
 
 .gear{
-	font-size: 55px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-size: 35px;
+	font-weight: bold;
+	font-family: 'Courier New', Courier, monospace;
 	background-color: rgb(151, 219, 251);
 }
 .gearCard{
@@ -158,6 +159,42 @@ button, span {
 	100% {
 	  -webkit-transform: translateY(0);
 			  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  .tracking-in-contract-bck {
+	-webkit-animation: tracking-in-contract-bck 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract-bck 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+ @-webkit-keyframes tracking-in-contract-bck {
+	0% {
+	  letter-spacing: 1em;
+	  -webkit-transform: translateZ(400px);
+			  transform: translateZ(400px);
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0.6;
+	}
+	100% {
+	  -webkit-transform: translateZ(0);
+			  transform: translateZ(0);
+	  opacity: 1;
+	}
+  }
+  @keyframes tracking-in-contract-bck {
+	0% {
+	  letter-spacing: 1em;
+	  -webkit-transform: translateZ(400px);
+			  transform: translateZ(400px);
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0.6;
+	}
+	100% {
+	  -webkit-transform: translateZ(0);
+			  transform: translateZ(0);
 	  opacity: 1;
 	}
   }

@@ -28,7 +28,7 @@ const Profile = ({ handleLogout, user }) => {
       <User />
       <br />
     <div>
-      <div className="gear text-center">YOUR GEAR</div>
+      <div className="tracking-in-contract-bck gear text-center">YOUR GEAR DASHBOARD</div>
       <br />
       {results.length ? results.map((result) => <div className="slide-in-bottom card float-left gearCard" key={result._id}>
         <div className="card-body ">
