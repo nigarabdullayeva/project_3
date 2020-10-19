@@ -62,11 +62,11 @@ function Home({user}) {
       </select>
       <br />
       <div className="text-center">
-        <button onClick={onSubmitSearch} className="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+        <button onClick={onSubmitSearch} className="btn btn-primary btn-lg my-2 my-sm-0" type="submit">Search</button>
       </div>
       <br />
 
-      {results.length ? results.map((result) => <div className="slide-in-bottom card float-right w-50" key={result._id}>
+      {results.length ? results.map((result) => <div className="slide-in-bottom card float-right w-50 mainCard" key={result._id}>
 
         <div className="card-body">
           <h5 className="card-header text-center">{result.title}</h5>
@@ -80,7 +80,7 @@ function Home({user}) {
           </ul>
           <button onClick={()=> {
             history.push("/profile")
-            rentIt(result._id)}} className="card-link">Rent it</button>
+            rentIt(result._id)}} className="card-link btn btn-outline-danger float-right">Rent it</button>
         </div>
 
       </div>) : null}

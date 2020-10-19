@@ -3,18 +3,18 @@ import API from "../utils/API";
 import '../containers/Profile.css'
 // import { useHistory } from 'react-router-dom';
 
-function Item({user}) {
+function Item({ user }) {
   // const history=useHistory();
   // console.log(user)
   const [item, setItem] = useState({
-    category:"",
+    category: "",
     title: "",
     description: "",
     location: "",
     price: "",
     photoURL: "",
     phone: "",
-    email:""
+    email: ""
   })
 
   const handleSetItem = (e) => {
@@ -34,7 +34,7 @@ function Item({user}) {
     <div className="card bg-light">
       <div className="card-header text-light bg-dark text-center">
         List your item
-  </div>
+    </div>
       <form className="inputItem">
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Category</label>
@@ -103,13 +103,13 @@ function Item({user}) {
           </div>
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Email</label>
-            <input 
-            type="text"
-            className="form-control"
-            name="email"
-            value={user.email} 
-            readOnly
-            onFocus={handleSetItem}
+            <input
+              type="text"
+              className="form-control"
+              name="email"
+              value={user.email}
+              readOnly
+              onFocus={handleSetItem}
             />
           </div>
           <button onClick={handleSaveItem} type="submit" className="btn btn-primary">Submit</button>

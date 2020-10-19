@@ -50,7 +50,7 @@ const Profile = ({ handleLogout, user }) => {
                   .catch((err) => { console.log(err) })
               }
               }
-              className="card-link">
+              className="card-link btn btn-outline-primary">
               Make item available
          </button> : null
           }
