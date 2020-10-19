@@ -12,7 +12,7 @@ function Item({user}) {
     description: "",
     location: "",
     price: "",
-    photoURL: "",
+    photoURL: "{url}",
     phone: "",
     email:""
   })
