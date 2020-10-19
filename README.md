@@ -34,15 +34,15 @@ MIT
 Pull requests are welcome
 
 ## Technologies
-React - for components,state,routing/
-Node.js - for JS runtime environment/
-Bootstrap - for responsive style/
-MongoDB,Mongoose - database for storing listed items information/
-Firebase - for user authentication and encryption/
-Firebase storage - for storing images/
-JS/ES6+ - for program logic/
-HTML - layout/
-CSS - for custom style/
+React - for components,state,routing. 
+Node.js - for JS runtime environment. 
+Bootstrap - for responsive style. 
+MongoDB,Mongoose - database for storing listed items information. 
+Firebase - for user authentication and encryption. 
+Firebase storage - for storing images. 
+JS/ES6+ - for program logic. 
+HTML - layout. 
+CSS - for custom style. 
 axios - for API calls
 
 
