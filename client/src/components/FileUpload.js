@@ -35,7 +35,7 @@ const FileUpload = () => {
     };
     return (
         <div>
-            <img src={url || "https://lippianfamilydentistry.net/wp-content/uploads/2015/11/user-default.png"} alt="firebaseimage" height="200" width="200" />
+            <img src={url || "https://lippianfamilydentistry.net/wp-content/uploads/2015/11/user-default.png"} alt="firebaseimage" height="200" width="200" className="rounded-circle"/>
             <br />
             <input type='file' onChange={handleChange} />
             <br />

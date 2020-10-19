@@ -35,12 +35,15 @@ const ItemUpload = (props) => {
         )
     };
     return (
-        <div>
+        <div className="itemUpload">
             <img src={url || "https://cdn.dribbble.com/users/4714/screenshots/1450303/icons-sports.png"} alt="firebaseimage" height="200" width="200" />
+            <br />
             <br />
             <input type='file' onChange={handleChange} />
             <br />
+            <br />
             <button onClick={handleUpload}>Upload</button>
+            <br/>
         </div>
     )
 }

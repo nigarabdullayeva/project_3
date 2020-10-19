@@ -1,9 +1,15 @@
+body {
+    /* background-color: grey !important; */
+    background-image: url(https://get.pxhere.com/photo/landscape-nature-wilderness-mountain-snow-winter-cloud-sky-sunrise-sunlight-morning-hill-lake-dawn-valley-mountain-range-dusk-weather-highland-ridge-summit-trees-mountains-alps-plateau-wallpaper-fell-loch-landform-geographical-feature-atmospheric-phenomenon-mountainous-landforms-940129.jpg) !important;
+    background-repeat: repeat
+}
+
 .profile {
-background-color: darkgrey;
+background-color: darkgrey !important;
 border-radius: 10px;
 padding: 20px;
-height: 300px;
-width: 250px;
+height: 30%;
+width: 30%;
 text-align: center;
 }
 .history {
@@ -15,3 +21,37 @@ width: 400px;
 text-align: center;
 float: right;
 }
+
+/* .backgroundimg {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-size: cover;
+    background-position: center;
+} */
+
+.inputItem  {
+    text-align: center;
+    width: 100%;
+    padding: 40px;
+    
+}
+
+.form-group {
+    float: center;
+}
+
+.itemUpload {
+    text-align: center;
+}
+
+input[type='file'] {
+    color: transparent;
+    text-align: center;
+  }
+
+  input {
+      text-align: center;
+  }

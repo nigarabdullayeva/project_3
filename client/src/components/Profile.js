@@ -7,12 +7,15 @@ const Profile = ({ handleLogout, user }) => {
 
   return (
     <>
+    
       <br/>
       <p>You are currently signed in as : {user.email}</p>
       <button className="btn-primary" onClick={handleLogout}>Logout</button>
       <br/>
       <User/>
+      <br/>
       <History/>
+      
     </>
   )
 }

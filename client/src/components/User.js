@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../containers/Profile.css'
+import '../containers/User.css'
 import FileUpload from '../components/FileUpload'
 
 
@@ -20,9 +20,18 @@ class User extends Component {
         <br />
         <br />
         <div className="row">
-          <div className="profile">
+          
+           <div className="profile"> 
+            {/* <div className="top-card-layout"> */}
+              {/* <img className="backgroundimg" src="https://theknow.denverpost.com/wp-content/uploads/2020/01/TR14FLYTOSKI.jpg" alt="adventure"> </img> */}
+
+           
+            {/* <img className="backgroundimg" height="100" src="https://theknow.denverpost.com/wp-content/uploads/2020/01/TR14FLYTOSKI.jpg" width="200" alt="adventure"></img> */}
             <FileUpload />
-          </div>
+            
+          
+             </div>
+          {/* </div> */}
         </div>
       </>
     );
