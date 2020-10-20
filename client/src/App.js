@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, withRouter } from 'react-router-dom';
-import Item from './components/Item';
 import Home from './components/Home';
 import Login from './components/Login';
 import Profile from './components/Profile';
@@ -95,15 +94,15 @@ function App({ history }) {
 
   return (
     <div className="container">
-      <Navbar />
+      <Navbar isAuthed={user !== null} />
       <Route exact path="/" component={()=> <Home user={user}/>} />
       
       <PrivateRoute isAuthed={user !== null} path="/profile" 
       component={()=><Profile user={user} handleLogout={handleLogout}/>}
       />
-      <PrivateRoute isAuthed={user !== null} path="/profile" 
+      {/* <PrivateRoute isAuthed={user !== null} path="/profile" 
       component={()=> <Item user={user}/>}
-      />
+      /> */}
   
       <Route path="/login" component={() => <Login
         email={email}

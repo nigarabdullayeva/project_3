@@ -1,8 +1,6 @@
 const router = require("express").Router();
 const itemController = require("../../controllers/itemController");
 
-
-
 // Matches with "/api/items"
 router
   .route("/")
@@ -12,7 +10,7 @@ router
 // Matches with "/api/items/myitems/all"
 router
   .route("/myitems/all")
-  .get(itemController.findByUser)
+  .get(itemController.getAllUserItems)
 
 // Matches with "/api/items/:id"
 router

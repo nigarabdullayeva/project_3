@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
-import API from "../utils/API";
 import '../containers/Profile.css'
 
-function Item({ user }) {
-  const [item, setItem] = useState({
-    category: "",
-    title: "",
-    description: "",
-    location: "",
-    price: "",
-    photoURL: "",
-    phone: "",
-    email: ""
-  })
+const startingState = {
+  category: "",
+  title: "",
+  description: "",
+  location: "",
+  price: "",
+  photoURL: "",
+  phone: "",
+  email: ""
+}
+
+function Item({ user, onSubmit }) {
+  const [item, setItem] = useState(startingState)
 
   const handleSetItem = (e) => {
+    e.preventDefault();
     setItem({
       ...item,
       [e.target.name]: e.target.value
@@ -23,7 +25,8 @@ function Item({ user }) {
 
   const handleSaveItem = (e) => {
     e.preventDefault();
-    API.saveItem(item);
+    onSubmit(item);
+    setItem(startingState);
   };
 
   return (
