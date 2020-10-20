@@ -6,7 +6,6 @@ import { useHistory } from 'react-router-dom';
 import Item from './Item';
 import API from '../utils/API';
 
-
 const Profile = ({ handleLogout, user }) => {
   const history=useHistory();
   const [results, setResults] = useState({selling: [], renting: []});
@@ -47,7 +46,7 @@ const Profile = ({ handleLogout, user }) => {
       <div className="tracking-in-contract-bck gear text-center">YOUR GEAR DASHBOARD</div>
       <br />
       <div className="selling">
-        <h4>LISTED ITEMS</h4>
+        <div className="li text-center slide-in-left w-50">LISTED ITEMS</div>
       {results.selling.length ? results.selling.map((result) => <div className="slide-in-bottom card float-left gearCard" key={result._id}>
         <div className="card-body ">
           <h5 className="card-header text-center">{result.title}</h5>
@@ -81,7 +80,7 @@ const Profile = ({ handleLogout, user }) => {
       </div>
       <br/>
       <div className="renting">
-      <h4>RENTED ITEMS</h4>
+      <div className="li text-center slide-in-left w-50">RENTED ITEMS</div>
       {results.renting.length ? results.renting.map((result) => <div className="slide-in-bottom card float-left gearCard" key={result._id}>
         <div className="card-body ">
           <h5 className="card-header text-center">{result.title}</h5>
