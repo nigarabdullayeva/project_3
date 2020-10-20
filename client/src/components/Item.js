@@ -24,7 +24,7 @@ function Item({ user, onSubmit }) {
   }
 
   const handleSaveItem = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     onSubmit(item);
     setItem(startingState);
   };
