@@ -5,8 +5,26 @@ module.exports = {
 
   findByUser: function(req,res){
     db.Item.find({email:req.query.email})
+    // .and({rentedBy:req.query.email})
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
+  },
+
+  findByRenter: function(req,res){
+    db.Item.find({rentedBy:req.query.email})
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+  },
+
+  getAllUserItems: async function (req,res){
+    try {
+    const selling = await db.Item.find({email:req.query.email});
+    const renting = await db.Item.find({rentedBy:req.query.email});
+    res.json({selling, renting});
+    }
+    catch(err){
+      res.status(422).json(err);
+    }
   },
 
   findAll: function (req, res) {

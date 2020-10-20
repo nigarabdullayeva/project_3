@@ -12,7 +12,7 @@ router
 // Matches with "/api/items/myitems/all"
 router
   .route("/myitems/all")
-  .get(itemController.findByUser)
+  .get(itemController.getAllUserItems)
 
 // Matches with "/api/items/:id"
 router
