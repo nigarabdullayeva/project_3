@@ -32,6 +32,10 @@ class User extends Component {
           
              </div>
           {/* </div> */}
+        
+           {/* <div className="profile w-50">
+            <FileUpload /> */}
+          
         </div>
       </>
     );

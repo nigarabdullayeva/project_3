@@ -5,22 +5,19 @@ import ItemUpload from '../components/ItemUpload'
 
 // import { useHistory } from 'react-router-dom';
 
-function Item({user}) {
-  // const history=useHistory();
-  // console.log(user)
+function Item({ user }) {
   const [item, setItem] = useState({
-    category:"",
+    category: "",
     title: "",
     description: "",
     location: "",
     price: "",
     photoURL: "{url}",
     phone: "",
-    email:""
+    email: ""
   })
 
   const handleSetItem = (e) => {
-    // console.log('we r typing!!', e.target.name)
     setItem({
       ...item,
       [e.target.name]: e.target.value
@@ -65,7 +62,7 @@ function Item({user}) {
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Item title </label>
+          <label htmlFor="exampleInputEmail1">Title </label>
           <input
             type="text"
             className="form-control"
@@ -123,13 +120,13 @@ function Item({user}) {
           </div>
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Email</label>
-            <input 
-            type="text"
-            className="form-control"
-            name="email"
-            value={user.email} 
-            readOnly
-            onFocus={handleSetItem}
+            <input
+              type="text"
+              className="form-control"
+              name="email"
+              value={user.email}
+              readOnly
+              onFocus={handleSetItem}
             />
           </div>
           <button onClick={handleSaveItem} type="submit" className="btn btn-primary">Submit</button>
