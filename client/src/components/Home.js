@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-// import { Route,Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
 
@@ -35,7 +34,7 @@ function Home({user}) {
   }
   const rentIt = (itemId)=>{
     if (user && user.uid) {
-      axios.put('/api/items/'+itemId,{rentedBy:user.uid})
+      axios.put('/api/items/'+itemId,{rentedBy:user.email})
       .then(({ data }) => data)
       .catch((err)=>{console.log(err)})
     }else{
@@ -83,7 +82,9 @@ function Home({user}) {
             <li className="list-group-item">Phone number: {result.phone}</li>
             <li className="list-group-item">Email: {result.email}</li>
           </ul>
-          <button onClick={()=> rentIt(result._id)} className="card-link">Rent it</button>
+          <button onClick={()=> {
+            history.go(0);
+            rentIt(result._id)}} className="card-link">Rent it</button>
         </div>
 
       </div>) : null}
