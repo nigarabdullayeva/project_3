@@ -98,6 +98,7 @@ const Profile = ({ handleLogout, user }) => {
       </div>) : null}</div>
       <br/>
       <Item user={user} onSubmit={saveNewItem}/>
+      <br/>
     </>
   )
 }
