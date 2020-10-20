@@ -1,22 +1,22 @@
 import React, { useState } from 'react'
-import API from "../utils/API";
 import '../containers/Profile.css'
 
-function Item({user}) {
-  // console.log(user)
-  const [item, setItem] = useState({
-    category:"",
-    title: "",
-    description: "",
-    location: "",
-    price: "",
-    photoURL: "",
-    phone: "",
-    email:""
-  })
+const startingState = {
+  category: "",
+  title: "",
+  description: "",
+  location: "",
+  price: "",
+  photoURL: "",
+  phone: "",
+  email: ""
+}
+
+function Item({ user, onSubmit }) {
+  const [item, setItem] = useState(startingState)
 
   const handleSetItem = (e) => {
-    // console.log('we r typing!!', e.target.name)
+    e.preventDefault();
     setItem({
       ...item,
       [e.target.name]: e.target.value
@@ -25,15 +25,16 @@ function Item({user}) {
 
   const handleSaveItem = (e) => {
     e.preventDefault();
-    API.saveItem(item);
+    onSubmit(item);
+    setItem(startingState);
   };
 
   return (
-    <div className="card bg-light">
-      <div className="card-header text-light bg-dark text-center">
-        List your item
-  </div>
-      <form className="inputItem">
+    <div className="card bg-light w-75 itemCard">
+      <div className="card-header text-center text-light bg-dark">
+        <h4>List your item</h4>
+      </div>
+      <form className="inputItem w-50">
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Category</label>
           <select onChange={handleSetItem} className="form-control " name="category" type="text">
@@ -47,7 +48,7 @@ function Item({user}) {
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Item title </label>
+          <label htmlFor="exampleInputEmail1">Title </label>
           <input
             type="text"
             className="form-control"
@@ -101,13 +102,13 @@ function Item({user}) {
           </div>
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Email</label>
-            <input 
-            type="text"
-            className="form-control"
-            name="email"
-            value={user.email} 
-            readOnly
-            onFocus={handleSetItem}
+            <input
+              type="text"
+              className="form-control"
+              name="email"
+              value={user.email}
+              readOnly
+              onFocus={handleSetItem}
             />
           </div>
           <button onClick={handleSaveItem} type="submit" className="btn btn-primary">Submit</button>

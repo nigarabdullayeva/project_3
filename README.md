@@ -1,29 +1,56 @@
-# Create React Express App
 
-## About This Boilerplate
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+# sport adventures
+## Deployed App on Heroku
+### https://boiling-mountain-96486.herokuapp.com/
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+<img src="./client/src/images/homePage.png">
 
-## Starting the app locally
+## Description
+React application that allows sport and adventure enthusiasts to share gear amongst themselves. Users have the option to rent sports equipment when travelling , or just try something before committing to buy, or rent out items they own for a profit...  
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
 
-```
-npm install
-```
 
-This should install node modules within the server and the client folder.
+## Table of Contents
+#### [Installation](https://github.com/nigarabdullayeva/project_3#installation-1)
+#### [Usage information](https://github.com/nigarabdullayeva/project_3#usage-information-1)
+#### [License](https://github.com/nigarabdullayeva/project_3#license-1)
+#### [Contributing](https://github.com/nigarabdullayeva/project_3#contributing-1)
+#### [Technologies](https://github.com/nigarabdullayeva/project_3#technologies-1)
+#### [Questions](https://github.com/nigarabdullayeva/project_3#questions-)
 
-After both installations complete, run the following command in your terminal:
 
-```
-npm start
-```
+## Installation
+Run 'npm start' in terminal to install dependencies
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+## Usage information
+Run 'npm start' in terminal
 
-## Deployment (Heroku)
+## License
+MIT
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+## Contributing
+Pull requests are welcome
+
+## Technologies
+React - for components,state,routing\
+Node.js - for JS runtime environment\
+Bootstrap - for responsive style\
+MongoDB,Mongoose - database for storing listed items information\
+Firebase - for user authentication and encryption\
+Firebase storage - for storing images\
+JS/ES6+ - for program logic\
+HTML - layout\
+CSS - for custom style\
+Animista.net - for CSS animations\
+axios - for API calls
+
+
+
+## Questions ?
+### https://github.com/cd-prog
+### https://github.com/nigarabdullayeva
+### https://github.com/DewdropStudio
+### https://github.com/CarsonK2112
+

@@ -19,16 +19,14 @@ class User extends Component {
       <>
         <br />
         <br />
-        <div className="row">
-          <div className="profile">
+        
+          <div className="profile w-50">
             <FileUpload />
-          </div>
+          
         </div>
       </>
     );
   }
 }
-
-
 
 export default User;

@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-// import { Route,Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
 
@@ -35,7 +34,7 @@ function Home({user}) {
   }
   const rentIt = (itemId)=>{
     if (user && user.uid) {
-      axios.put('/api/items/'+itemId,{rentedBy:user.uid})
+      axios.put('/api/items/'+itemId,{rentedBy:user.email})
       .then(({ data }) => data)
       .catch((err)=>{console.log(err)})
     }else{
@@ -48,13 +47,11 @@ function Home({user}) {
       <br />
       <br />
       <br />
-      <br />
-      <br />
       <div className="jumbotron text-center">
-        <h1>Sport Adventures</h1>
-        <h3>Find the right gear to fuel your next adventure</h3></div>
-      <input ref={input} className="form-control" type="text" placeholder="Search for gear in this city" aria-label="Search" /><br />
-      <select onChange={changeCat} className="form-control ">
+        <h1 className="text-pop-up-top">Sport Adventures</h1>
+        <h2 className="slide-in-left text-shadow-pop-bl">Find the right gear to fuel your next adventure</h2></div>
+      <input ref={input} className="form-control form-control-lg " type="text" placeholder="Find gear in this city" aria-label="Search" /><br />
+      <select onChange={changeCat} className="form-control form-control-lg ">
         <option value="">Select category</option>
         <option value="skis">Skis</option>
         <option value="snowboards">Snowboards</option>
@@ -65,11 +62,11 @@ function Home({user}) {
       </select>
       <br />
       <div className="text-center">
-        <button onClick={onSubmitSearch} className="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+        <button onClick={onSubmitSearch} className="btn btn-primary btn-lg my-2 my-sm-0" type="submit">Search</button>
       </div>
       <br />
 
-      {results.length ? results.map((result) => <div className="slide-in-bottom card float-right w-50" key={result._id}>
+      {results.length ? results.map((result) => <div className="slide-in-bottom card float-left w-50 mainCard" key={result._id}>
 
         <div className="card-body">
           <h5 className="card-header text-center">{result.title}</h5>
@@ -81,7 +78,9 @@ function Home({user}) {
             <li className="list-group-item">Phone number: {result.phone}</li>
             <li className="list-group-item">Email: {result.email}</li>
           </ul>
-          <button onClick={()=> rentIt(result._id)} className="card-link">Rent it</button>
+          <button onClick={()=> {
+            history.push("/profile")
+            rentIt(result._id)}} className="card-link btn btn-outline-danger float-right">Rent it</button>
         </div>
 
       </div>) : null}
