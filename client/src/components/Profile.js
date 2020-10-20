@@ -46,7 +46,8 @@ const Profile = ({ handleLogout, user }) => {
     <div>
       <div className="tracking-in-contract-bck gear text-center">YOUR GEAR DASHBOARD</div>
       <br />
-      <div>Selling
+      <div className="selling">
+        <h4>LISTED ITEMS</h4>
       {results.selling.length ? results.selling.map((result) => <div className="slide-in-bottom card float-left gearCard" key={result._id}>
         <div className="card-body ">
           <h5 className="card-header text-center">{result.title}</h5>
@@ -79,7 +80,8 @@ const Profile = ({ handleLogout, user }) => {
       </div>
       </div>
       <br/>
-      <div>Renting
+      <div className="renting">
+      <h4>RENTED ITEMS</h4>
       {results.renting.length ? results.renting.map((result) => <div className="slide-in-bottom card float-left gearCard" key={result._id}>
         <div className="card-body ">
           <h5 className="card-header text-center">{result.title}</h5>
@@ -94,6 +96,7 @@ const Profile = ({ handleLogout, user }) => {
           </ul>
         </div>
       </div>) : null}</div>
+      <br/>
       <Item user={user} onSubmit={saveNewItem}/>
     </>
   )
