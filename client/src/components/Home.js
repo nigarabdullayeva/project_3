@@ -71,8 +71,7 @@ function Home({user}) {
         <div className="card-body">
           <h5 className="card-header text-center">{result.title}</h5>
           <ul className="list-group list-group-flush">
-          <li className="list-group-item">Photo: {result.photoURL}</li>
-          console.log({result.photoURL})
+          {/* <li className="list-group-item">Photo: {result.photoURL}</li> */}
             <li className="list-group-item">Category: {result.category}</li>
             <li className="list-group-item">Description: {result.description}</li>
             <li className="list-group-item">Location: {result.location}</li>

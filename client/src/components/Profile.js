@@ -42,6 +42,7 @@ const Profile = ({ handleLogout, user }) => {
             <li className="list-group-item">Phone number: {result.phone}</li>
             <li className="list-group-item">Email: {result.email}</li>
             <li className="list-group-item">RentedBy: {result.rentedBy}</li>
+            {/* <li className="list-group-item">RentedBy: {result.photoURL}</li> */}
           </ul>
 
           {(result.rentedBy != null) ?
